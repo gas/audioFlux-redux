@@ -8,6 +8,7 @@ set(SOURCES
     cqt_algorithm.c
     flux_spectral.c   # Necesario para onset
     flux_temporal.c   # Necesario para bft
+    temporal_algorithm.c
     reassign_algorithm.c
     stft_algorithm.c
     
