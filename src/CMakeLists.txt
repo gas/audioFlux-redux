@@ -19,10 +19,12 @@ set(SOURCES
 	dsp/dct_algorithm.c
 	dsp/resample_algorithm.c
 	dsp/filterDesign_fir.c
+	dsp/filterDesign_freqz.c	
 
     # Archivos en filterbank/
     filterbank/auditory_filterBank.c
     filterbank/cqt_filterBank.c
+    filterbank/chroma_filterBank.c
     
     # Archivos en mir/
     mir/onset_algorithm.c
@@ -182,12 +184,12 @@ elseif (${CMAKE_SYSTEM_NAME} MATCHES "win64")
 	include_directories(${PROJECT_SOURCE_DIR})
 
 	# add so, include source path
-	add_library(audioflux
+	add_library(audioflux-redux
 				SHARED
 				${SOURCES})
 
 	# link target lib
-	target_link_libraries(audioflux
+	target_link_libraries(audioflux-redux
 						 fftw3f-3
 						 )
 
