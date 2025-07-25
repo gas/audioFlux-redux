@@ -148,26 +148,26 @@ elseif (${CMAKE_SYSTEM_NAME} MATCHES "linux")
 	link_directories(${PROJECT_SOURCE_DIR})
 
 	# add so, include source path
-	add_library(audioflux
+	add_library(audioflux-redux
 				SHARED
 				${SOURCES})
 
 	# link target lib
 	if (MKL_LIB_PATH)
-        target_link_libraries(audioflux
+        target_link_libraries(audioflux-redux
 						      mkl_intel_lp64
 						      mkl_core
 						      mkl_intel_thread
 						      omp
 						      m)
     else()
-        target_link_libraries(audioflux
+        target_link_libraries(audioflux-redux
                               omp
                               m)
 	endif()
 
 
-	install(TARGETS audioflux DESTINATION lib)
+	install(TARGETS audioflux-redux DESTINATION lib)
 
 elseif (${CMAKE_SYSTEM_NAME} MATCHES "win64")
 	# -Wl,-rpath=.
@@ -193,7 +193,7 @@ elseif (${CMAKE_SYSTEM_NAME} MATCHES "win64")
 						 fftw3f-3
 						 )
 
-	install(TARGETS audioflux DESTINATION lib)
+	install(TARGETS audioflux-redux DESTINATION lib)
 
 endif()
 
