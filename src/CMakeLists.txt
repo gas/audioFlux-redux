@@ -1,16 +1,40 @@
 cmake_minimum_required(VERSION 3.5)
-project(audioflux)
+project(audioflux-redux)
 
-aux_source_directory(vector vector)
-aux_source_directory(util util)
-aux_source_directory(dsp dsp)
-aux_source_directory(classic classic)
-aux_source_directory(filterbank filterbank)
-aux_source_directory(feature feature)
-aux_source_directory(mir mir)
-aux_source_directory(. SOURCES)
+# Definimos explícitamente solo los archivos que vamos a compilar
+set(SOURCES
+    # Archivos en la raíz de src/
+    bft_algorithm.c
+    cqt_algorithm.c
+    flux_spectral.c   # Necesario para onset
+    flux_temporal.c   # Necesario para bft
+    reassign_algorithm.c
+    stft_algorithm.c
+    
+    # Archivos en dsp/
+    dsp/fft_algorithm.c
+    dsp/flux_window.c
+    dsp/flux_correct.c # Necesario para reassign (usado en bft)
+    dsp/phase_vocoder.c # Necesario para reassign (usado en bft)
 
-list(APPEND SOURCES ${vector} ${util} ${dsp} ${classic} ${filterbank} ${feature} ${mir})
+    # Archivos en filterbank/
+    filterbank/auditory_filterBank.c
+    filterbank/cqt_filterBank.c
+    
+    # Archivos en mir/
+    mir/onset_algorithm.c
+    mir/_queue.c
+
+    # Archivos en util/
+    util/flux_util.c
+    util/flux_wave.c
+    
+    # Archivos en vector/
+    vector/flux_complex.c
+    vector/flux_vector.c
+    vector/flux_vectorInt.c
+    vector/flux_vectorOp.c
+)
 
 if(${CMAKE_SYSTEM_NAME} MATCHES "iOS")
 	set(CMAKE_C_FLAGS  "${CMAKE_C_FLAGS} -DHAVE_ACCELERATE")
