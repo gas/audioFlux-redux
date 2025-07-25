@@ -35,14 +35,26 @@ El propósito de **`audioFlux-redux`** es servir como una dependencia C de alto 
 
 -----
 
+## Instalación
+
+Se recomienda usar la librería original, aún así si quieres instalar esta versión reducida necesitarás cmake y clang:
+```
+sudo apt install cmake clang
+sudo apt install libomp-dev
+sudo apt install libfftw3-dev
+```
+Después, sigue las instrucciones del script de instalación.
+
+-----
+
 ## Licencia
 
 Este proyecto derivado mantiene la licencia **MIT** original del proyecto `audioFlux`. Consulta el archivo `LICENSE.md` para más detalles.
 
 
-## Documentation
+## Documentación
 
-Documentation of the original package can be found online:
+Puedes acceder a la documentación del paquete original en línea:
 
 [https://audioflux.top](https://audioflux.top/)
 
