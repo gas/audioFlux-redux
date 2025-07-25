@@ -33,8 +33,6 @@ Se mantiene el algoritmo de **detección de inicios (Onset)**, que es el compone
 
 El propósito de **`audioFlux-redux`** es servir como una dependencia C de alto rendimiento y bajo impacto para proyectos en Go que necesiten estas dos funcionalidades sin el peso y la complejidad de la librería `audioFlux` completa.
 
-La intención es utilizar **Cgo** para crear un *wrapper* idiomático en Go, permitiendo a los desarrolladores de Go acceder al poder del análisis de audio en C de una manera controlada y eficiente.
-
 -----
 
 ## Licencia
