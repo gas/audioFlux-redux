@@ -16,6 +16,9 @@ set(SOURCES
     dsp/flux_window.c
     dsp/flux_correct.c # Necesario para reassign (usado en bft)
     dsp/phase_vocoder.c # Necesario para reassign (usado en bft)
+	dsp/dct_algorithm.c
+	dsp/resample_algorithm.c
+	dsp/filterDesign_fir.c
 
     # Archivos en filterbank/
     filterbank/auditory_filterBank.c
